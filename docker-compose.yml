@@ -1,11 +1,11 @@
 services:
     laravel:
         build:
-            context: './docker/8.3'
+            context: './docker/8.2'
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: '8.3/app-laravel'
+        image: '8.2/app-laravel'
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -21,11 +21,11 @@ services:
             - sail
     swoole-octane:
         build:
-            context: './docker/8.3-octane'
+            context: './docker/8.2-octane'
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: '8.3/app-laravel-octane'
+        image: '8.2/app-laravel-octane'
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -41,11 +41,11 @@ services:
             - sail
     fpm:
         build:
-            context: './docker/8.3-fpm'
+            context: './docker/8.2-fpm'
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: '8.3/app-fpm'
+        image: '8.2/app-fpm'
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:

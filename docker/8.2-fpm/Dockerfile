@@ -17,8 +17,6 @@ RUN apt-get update && apt-get upgrade -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN && docker-php-ext-enable cli dev pgsql sqlite3 gd curl imap mysql mbstring xml zip bcmath soap intl readline ldap msgpack igbinary redis memcached pcov imagick xdebug swoole 
-
 RUN groupadd --force -g $WWWGROUP sail
 RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
 
